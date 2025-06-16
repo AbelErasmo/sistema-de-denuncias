@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/contacto.styles.css">
+    <link href="../css/styles.css" rel="stylesheet"/>
+
+    <title>Contacto</title>
+</head>
+<body>
+
+   <nav class="navbar">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../assets/logo.png" alt="Sistema de Denúncias"> 
+            </a>
+        </div>
+
+        <ul>
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="../denuncia.html">Denúncias</a></li>
+            <li><a href="./about.html">Sobre</a></li>
+            <li><a href="./contact.html">Contactos</a></li>
+        </ul>
+
+        <button class="btn-denuncia btn-mobile">
+            <a href="../denuncia.html">Registar denúncia</a>
+        </button>
+
+        <div class="menu-resposivo">
+            <img src="../assets/menu.svg" alt="Menu" class="menu">
+            <img src="../assets/close.svg" alt="Menu" class="fechar-menu">
+        </div>
+    </nav>
+
+      <header>
+        <h1 class="titulo">Sistema de Registo de Denúncias</h1>
+      </header>
+    
+      <div class="container">
+        <h2 class="contact-title">Entre em contacto conosco</h2>
+        <p class="contact-description">
+          Estamos à disposição para lhe ajudar a esclarecer as dúvidas sobre o tratamento dos teus dados na nossa plataforma.
+        </p>
+        
+        <div class="contact-info">
+          <p><strong>Endereço: </strong>EN4, Bairro Luís Cabral, Maputo-Moçambique</p>
+          <p><strong>Telefone: </strong>(+258) 87 84 87 258 | (+258) 84 40 13 954</p>
+          <p><strong>Email: </strong>erasmosibinde@gmail.com</p>
+        </div>
+    
+        <form action="#" class="contact-form" id="denuncia-form">
+          <div class="form-group">
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" class="obrigatorio" >
+          </div>
+          <div class="form-group">
+            <label for="email">Seu Email</label>
+            <input type="email" id="email" name="email" placeholder="Seu email" class="obrigatorio" >
+          </div>
+          <div class="form-group">
+            <label for="assunto">Assunto</label>
+            <input type="text" id="assunto" name="assunto" placeholder="Assunto da mensagem" class="obrigatorio" >
+          </div>
+          <div class="form-group">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem" class="obrigatorio" ></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn-submit">Enviar Mensagem</button>
+          </div>
+        </form>
+      </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Sistema de Denúncias. Todos os direitos reservados.</p>
+        <p>Desenvolvido por <a href="mailto:erasmosibinde@gmail.com">Erasmo Abel</a></p>
+    </footer>
+
+    <script src="../js/scripts.js"></script>
+</body>
+</html>

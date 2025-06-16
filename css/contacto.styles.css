@@ -1,0 +1,138 @@
+:root {
+    --primary-color: #E64A19;
+    --secondary-color: #1cc88a;
+    --accent-color: #0e70da;
+    --background-light: #ffffff;
+    --text-color: #333;
+    --input-border: #ccc;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --border-radius: 6px;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+
+  header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  header .titulo {
+    color: white;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  .contact-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+
+  .contact-description {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .contact-info {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
+
+  /* Formulário de contato */
+  form.contact-form {
+    background: #f8f9fa;
+    border: 1px solid var(--input-border);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    transition: transform 0.3s ease;
+  }
+
+  form.contact-form:hover {
+    transform: scale(1.01);
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--input-border);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: border-color 0.3s;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+
+  .btn-submit {
+    display: inline-block;
+    background-color: #f39c12;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-submit:hover {
+    background-color: var(--primary-color);
+  }
+
+    span {
+    color: red;
+    font-size: 12pt;
+    display: block;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+
+  @media (max-width: 600px) {
+    .contact-title {
+      font-size: 1.5rem;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 1rem;
+    }
+  }

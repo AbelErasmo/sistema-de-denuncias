@@ -1,0 +1,390 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eee6e6;
+}
+
+.info {
+    background-color: rgba(236, 80, 8, 0.9);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 9pt;
+    padding: 7pt;
+    color: white;
+    font-family: cursive;
+}
+
+.info_contacto {
+    margin-left: 16px;
+} 
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar {
+    background-color: #e5eaee;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(117, 117, 117, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.logo {
+    align-items: center;
+    margin-left: 3em;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+}
+
+.navbar ul li {
+    position: relative;
+}
+
+.navbar ul li a {
+    color: #000;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 10px 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover {
+    color: #f39c12;
+    margin: 0;
+}
+
+.navbar ul li:hover ul {
+    display: flex;
+}
+
+.navbar ul li ul li {
+    padding: 10px;
+}
+
+.btn-denuncia {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 3em;
+}
+
+.menu-resposivo {
+    display: none;
+}
+
+img {
+    width: 30px;
+    height: auto;
+}
+
+.banner {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    min-height: 420px;
+    background-image: url('../assets/banner-web.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    text-align: center;
+    padding: 40px 0;
+    color: white;
+}
+
+.banner h1 {
+    font-size: 4.5em;
+    margin-bottom: 20px;
+}
+
+.banner p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    color: #f76c21;
+    background-color: rgba(172, 171, 171, 0.5);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 10px 20px;
+    max-width: 800px;
+    border-radius: 8px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: inline-block;
+}
+
+.conteudo {
+    width: 95%;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.conteudo h2 {
+    color: #E64A19;
+    font-size: 22pt;
+    margin-bottom: 15px;
+    margin-top: 1rem;
+}
+
+.conteudo h2::after {
+    content: '';
+    display: block;
+    width: 10%;
+    height: 3px;
+    background-color: #f08017;
+    margin-top: 10px;
+}
+
+.conteudo p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.conteudo .info-texto {
+   color: #f08017;
+   font-weight: 700;
+   font-style: italic;
+   margin-bottom: 2em;
+}
+
+.conteudo ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.conteudo ul li {
+    position: relative;
+    padding-left: 32px;
+    margin-bottom: 12px;
+}
+
+.conteudo ul li::before {
+    content: '';
+    position: absolute;
+    border-radius: 0;
+    box-shadow: none;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    background: none;
+    border: none;
+    left: 0;
+    top: 2px;
+    mask-image: url('data:image/svg+xml;utf8,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 9.5L8 13.5L14 5.5" stroke="green" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 9.5L8 13.5L14 5.5" stroke="green" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-color: #f08017;
+}
+
+.conteudo ul li {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.conteudo ol li a {
+    color: #f08017;
+    text-decoration: none;
+}
+
+.conteudo ol li a:hover {
+    color: #f08017;
+    text-decoration: underline;
+}
+
+.conteudo ol {
+    list-style: decimal inside;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.conteudo ol li {
+    position: relative;
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 10px;
+    padding-left: 32px;
+}
+
+.conteudo ol li {
+    list-style: none;
+}
+
+.conteudo ol li::before {
+    content: counter(li) ".";
+    counter-increment: li;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #f08017;
+    font-weight: bold;
+    font-size: 1em;
+    background: none;
+}
+
+.conteudo ol {
+    counter-reset: li;
+}
+
+.footer {
+    background-color: #f08017;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+/* Estilos definidos para mobile */
+
+@media (max-width: 768px) {
+    /* .btn-denuncia {
+        display: none;
+    } */
+
+    .fechar-menu {
+        display: none;
+    }
+
+    .menu-resposivo {
+        display: block;
+        cursor: pointer;
+        /* margin-right: 2em; */
+        position: relative;
+        z-index: 110;
+    }
+
+    .btn-mobile {
+        display: flex;
+        margin-right: 0;
+    }
+
+    .painel-denuncia {
+        display: flex;
+    }
+
+    .mobile {
+        display: flex;
+        margin: 1rem 1rem 2rem 0;
+        border: 1px solid #f08017;
+    }
+
+    .logo {
+        margin-left: 0;
+    }
+
+    .navbar {
+        /* position: relative; */
+        display: flex;
+        justify-content: space-between;
+        top: 0;
+        position: sticky;
+    }
+
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        background: #e5eaee;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 6px 0;
+        z-index: 100;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    }
+
+    .navbar ul li {
+        width: 100%;
+        background-color: #e5eaee;
+        border-bottom: 2px solid #dbd9d9;
+    }
+
+    .navbar ul li:last-child {
+        border-bottom: none;
+    }
+
+    .navbar ul li a:hover {
+        color: black;
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .banner h1 {
+        margin-bottom: 20px;
+        font-size: 4.5em;
+        color: #f39c12;
+    }
+
+    .banner p {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+        color: #ffffff;
+        background-color: rgba(172, 171, 171, 0.5);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        padding: 10px 20px;
+        /* border-radius: 10px; */
+        display: inline-block;
+    }
+
+    .conteudo {
+        padding: 15px;
+    }
+
+    .conteudo h2 {
+        font-size: 20px;
+    }
+
+    .conteudo p, .conteudo ul li {
+        font-size: 14px;
+    }
+
+    .denuncia-form {
+        padding: 15px;
+    }
+
+    .denuncia-form h3 {
+        font-size: 20px;
+    }
+
+    .denuncia-form input,
+    .denuncia-form select,
+    .denuncia-form textarea {
+        font-size: 14px;
+    }
+
+    .btn-denuncia {
+        font-size: 16px;
+    }
+}

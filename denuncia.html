@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/denuncias.css">
+    <title>Sistema de Denúncias</title>
+</head>
+
+<body>
+    <div class="info">
+        <p class="info_contacto">Contactos: (+258) 87 84 87 258 | (+258) 87 84 87 258</p>
+        <p class="info_contacto">Email: <a href="mailto:erasmosibinde@gmail.com">erasmosibinde@gmail.com</a></p>
+        <p class="info_contacto">Endereço: EN4, Bairro Luís Cabral, Maputo-Moçambique</p>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="./index.html">
+                <img src="./assets/logo.png" alt="Sistema de Denúncias"> 
+            </a>
+        </div>
+
+        <ul>
+            <li><a href="./index.html">Início</a></li>
+            <li><a href="./denuncia.html">Denúncias</a></li>
+            <li><a href="./pages/about.html">Sobre</a></li>
+            <li><a href="./pages/contact.html">Contactos</a></li>
+        </ul>
+
+        <button class="btn-denuncia btn-mobile">
+            <a href="./denuncia.html">Registar denúncia</a>
+        </button>
+
+        <div class="menu-resposivo">
+            <img src="./assets/menu.svg" alt="Menu" class="menu">
+            <img src="./assets/close.svg" alt="Menu" class="fechar-menu">
+        </div>
+    </nav>
+
+    <section class="banner">
+        <h1>Sistema de Denúncias</h1>
+        <div class="banner-texto">
+            <p>Não fique alheio a actos ilícitos, denuncie-os de forma anónima!<br/>Denuncie crimes e ajude a manter a segurança na sociedade.</p>
+        </div>
+    </section>
+
+    <section class="conteudo">
+        <h2>Registar ou visualisar o status da denúncia</h2>
+        
+        <div class="painel-denuncia">
+            <button id="nova_denuncia" class="btn-denuncia mobile" onclick="denuncia.novaDenuncia()">Nova denúncia</button>
+            <button id="historico_denuncia" class="btn-denuncia mobile" onclick="denuncia.historico()">Visualizar status</button>
+        </div>
+        <!-- action="config/db_connection.php" -->
+        <form id="denuncia-form" method="GET" class="denuncia-form" style="display: none;">
+            <h3>Registar denúncia</h3>
+            
+            <div class="anonimo">              
+                <label for="descricao">Manter em anonimato?</label>
+                <input type="radio" id="sim" name="anonimo" value="sim" class="obrigatorio" checked onchange="denuncia.anonimato()">
+                <label for="sim">Sim</label>
+                <input type="radio" id="nao" name="anonimo" value="nao" class="obrigatorio" onchange="denuncia.anonimato()">
+                <label for="nao">Não</label>
+            </div>
+
+            <div id="dados-pessoais" style="display: none;">
+                <label>Nome Completo:</label>
+                <input type="text" name="nome" id="nome" placeholder="Nome Completo">
+                <label>Email:</label>
+                <input type="email" name="email" id="email" placeholder="username@example.com">
+                <label>Celular:</label>
+                <input type="tel" name="telefone" id="telefone">
+            </div>
+
+            <label for="tipo">Tipo de Denúncia:</label>
+            <select id="tipo" name="tipo" class="obrigatorio">
+                <option value="">Selecione o tipo da denúncia</option>
+                <option value="corrupcao">Corrupção</option>
+                <option value="abuso">Abuso Sexual</option>
+                <option value="sequestro">Sequestro</option>
+                <option value="violencia">Violência Doméstica</option>
+                <option value="trafico">Tráfico Humano</option>
+                <option value="homicidio">Homicídio</option>
+                <option value="abuso">Abuso Moral</option>
+                <option value="assalto">Assalto</option>
+                <option value="fraude">Fraude</option>
+                <option value="descriminacao">Descriminação</option>
+                <option value="outro">Outro</option>
+            </select>
+
+            <label for="descricao">Descrição da Ocorrência:</label>
+            <textarea id="descricao" class="obrigatorio" name="descricao" rows="4"></textarea>
+
+            <label for="provincia">Província:</label>
+            <select id="provincia" class="obrigatorio" name="provincia">
+                <option value="">Selecione uma Província</option>
+                <optgroup label="SUL">
+                    <option value="Maputo">Cidade de Maputo</option>
+                    <option value="Maputo Provincia">Maputo Provincia</option>
+                    <option value="Gaza">Gaza</option>
+                    <option value="Inhambane">Inhambane</option>
+                </optgroup>
+                <optgroup label="CENTRO">
+                    <option value="Sofala">Sofala</option>
+                    <option value="Manica">Manica</option>
+                    <option value="Tete">Tete</option>
+                    <option value="Zambezia">Zambézia</option>
+                </optgroup>
+                <optgroup label="NORTE">
+                    <option value="Nampula">Nampula</option>
+                    <option value="Cabo Delgado">Cabo Delgado</option>
+                    <option value="Niassa">Niassa</option>
+                </optgroup>
+            </select>
+
+            <label for="local">Local da Ocorrência</label>
+            <input type="text" id="local" name="local" class="obrigatorio">
+            <label for="data">Data da Ocorrência:</label>
+            <input type="datetime-local" id="data" name="data" class="obrigatorio">
+            <label for="data">Evidências:</label>
+            <div id="container">
+                <input type="file" id="file[]" class="obrigatorio" name="file" accept="image/*,video/*" multiple>
+            </div>
+            <button class="mais" onclick="denuncia.adicionarInput()">➕</button><br>
+            <button type="submit" class="btn-denuncia">Submeter denúncia</button>
+
+            <div id="submentido"></div>
+        </form>
+
+        <form id="protocolo-form" class="denuncia-form" style="display: none;">
+            <h3>O seu número de protocolo é: <span>722236789</span></h3>
+            <p>Por favor, guarde-o consigo num local seguro para acompanhar o status da tua denúncia.
+                Evite compartilhar de modo que a sua denúnica seja confidencial e anónima.</p>
+        </form>
+
+        <form id="historico-form" class="denuncia-form" style="display: none;">
+            <h3>Visualizar Status da Denúncia</h3>
+            <label for="protocolo">Insira o número de Protocolo:</label>
+            <input type="text" id="protocolo" name="protocolo">
+            <button type="submit" class="btn-denuncia" onclick="denuncia.mostrarHistorico()">Consultar status</button>
+        </form>
+
+        <form class="historico" style="display: block;">
+            <h3>Histórico do processo</h3>
+            <table id="historico-table">
+                <thead>
+                    <tr>
+                        <th>ID do Protocolo</th>
+                        <th>Tipo de Denúncia</th>
+                        <th>Descrição</th>
+                        <th>Data da Ocorrência</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="historico-body">
+                    <!-- <tr>
+                        <td colspan="5" style="text-align: center;">Nenhuma denúncia registrada.</td>
+                    </tr> -->
+                    <tr>
+                        <td>Nenhuma denúncia registrada.</td>
+                        <td>Nenhuma denúncia registrada.</td>
+                        <td>Nenhuma denúncia registrada.</td>
+                        <td>Nenhuma denúncia registrada.</td>
+                        <td>Nenhuma denúncia registrada.</td>
+                    </tr>
+                    <!-- Os dados do histórico serão preenchidos dinamicamente com PHP -->
+                </tbody>
+            </table>
+        </form>
+
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Sistema de Denúncias. Todos os direitos reservados.</p>
+        <p>Desenvolvido por <a href="mailto:erasmosibinde@gmail.com">Erasmo Abel</a></p>
+    </footer>
+
+    <script src="./js/scripts.js"></script>
+</body>
+</html>
