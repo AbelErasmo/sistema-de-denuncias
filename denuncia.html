@@ -53,8 +53,7 @@
             <button id="nova_denuncia" class="btn-denuncia mobile" onclick="denuncia.novaDenuncia()">Nova denúncia</button>
             <button id="historico_denuncia" class="btn-denuncia mobile" onclick="denuncia.historico()">Visualizar status</button>
         </div>
-        <!-- action="config/db_connection.php" -->
-        <form id="denuncia-form" method="GET" class="denuncia-form" style="display: none;">
+        <form action="./uploads/upload.php" id="denuncia-form" method="POST" class="denuncia-form" style="display: block;">
             <h3>Registar denúncia</h3>
             
             <div class="anonimo">              
@@ -67,11 +66,11 @@
 
             <div id="dados-pessoais" style="display: none;">
                 <label>Nome Completo:</label>
-                <input type="text" name="nome" id="nome" placeholder="Nome Completo">
+                <input type="text" name="nome" class="validacao" id="nome" placeholder="Nome Completo">
                 <label>Email:</label>
-                <input type="email" name="email" id="email" placeholder="username@example.com">
+                <input type="email" class="validacao" name="email" id="email" placeholder="username@example.com">
                 <label>Celular:</label>
-                <input type="tel" name="telefone" id="telefone">
+                <input type="tel" name="telefone" class="validacao" id="telefone" >
             </div>
 
             <label for="tipo">Tipo de Denúncia:</label>
@@ -121,9 +120,9 @@
             <input type="datetime-local" id="data" name="data" class="obrigatorio">
             <label for="data">Evidências:</label>
             <div id="container">
-                <input type="file" id="file[]" class="obrigatorio" name="file" accept="image/*,video/*" multiple>
+                <input type="file" id="file[]" class="obrigatorio" name="file" accept="image/*,video/*" multiple >
             </div>
-            <button class="mais" onclick="denuncia.adicionarInput()">➕</button><br>
+            <button type="button" class="mais" onclick="denuncia.adicionarInput()">➕</button><br>
             <button type="submit" class="btn-denuncia">Submeter denúncia</button>
 
             <div id="submentido"></div>

@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fecharIcon.addEventListener("click", () => menuResponsivo(false));
     menu.querySelectorAll("a").forEach(link => link.addEventListener("click", () => menuResponsivo(false)));
 
-    // Fecha o menu ao clicar fora dele
+    // Fecha o menu ao clicar fora
     document.addEventListener("click", (e) => {
         if (
             menu.classList.contains("active") &&
@@ -55,16 +55,15 @@ class Denuncia {
         }
         const novoInput = document.createElement("input");
         novoInput.type = "file";
-        novoInput.name = "file[]";
-        novoInput.required = false;
-        novoInput.className = "file-input";
+        novoInput.id = "file[]";
+        novoInput.name = "file";
+        novoInput.className = "file-input obrigatorio";
 
         const anexosAtuais = this.container.querySelectorAll('input[type="file"].file-input').length;
-        if (anexosAtuais >= 5) {
+        if (anexosAtuais >= 4) {
             alert("Só pode adicionar até 5 anexos.");
             return;
         }
-
         this.container.appendChild(novoInput);
     }
 
@@ -121,7 +120,7 @@ class Denuncia {
     validacao() {
         const campos = document.querySelectorAll(".obrigatorio");
         let valido = true;
-
+    
         campos.forEach(input => {
             let erro = input.nextElementSibling;
             if (!erro || !erro.classList.contains("error")) {
@@ -133,34 +132,35 @@ class Denuncia {
                 erro.textContent = "*Campo obrigatório";
                 input.classList.add("invalido");
                 valido = false;
+                input.focus();
             } else {
                 erro.textContent = "";
                 input.classList.remove("invalido");
             }
         });
 
-        if (valido) {
-            const submetido = document.querySelector("#submentido");
-            submetido.innerHTML = "<p class='aceite'>A tua denuncia foi submetida com sucesso. O teu numero de protocolo é <b>00100</b>, por favor, guarde o consigo para acompanhar o status da tua denuncia.</p>";
+        if (!valido) {
+            event.preventDefault()
         }
-        
+
         return valido;
     }
 
     anonimato() {
         const sim = document.getElementById("sim");
         const ocultar = document.getElementById("dados-pessoais");
+        const adicionarClass = document.querySelectorAll(".validacao");
 
         if (sim && ocultar) {
             if (sim.checked) {
                 ocultar.style.display = "none";
             } else {
                 ocultar.style.display = "block";
+                adicionarClass.forEach(el => el.className = "obrigatorio");
             }
         }
     }
 
-    
 }
 
 const denuncia = new Denuncia();
