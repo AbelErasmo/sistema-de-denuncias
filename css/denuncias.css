@@ -85,13 +85,21 @@
     color: #777;
 }
 
-.mais {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 4px;
-    margin-left: auto;
-    color: white;
-    transition: background-color 0.3s ease;
+.butoes {
+  display: flex;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.butoes .mais {
+  margin-top: 4px;
+  color: white;
+  margin-left: 30rem;
+  transition: background-color 0.3s ease;
+}
+
+.butoes .mais:first-child {
+  margin-left: 1rem;
 }
 
 #global-loader {

@@ -47,26 +47,6 @@ class Denuncia {
         this.container = document.querySelector("#container");
     }
 
-    adicionarInput() {
-        if(!this.container) {
-            console.error("Elemento '#container' não encontrado."); 
-            return;
-
-        }
-        const novoInput = document.createElement("input");
-        novoInput.type = "file";
-        novoInput.id = "file[]";
-        novoInput.name = "file";
-        novoInput.className = "file-input obrigatorio";
-
-        const anexosAtuais = this.container.querySelectorAll('input[type="file"].file-input').length;
-        if (anexosAtuais >= 4) {
-            alert("Só pode adicionar até 5 anexos.");
-            return;
-        }
-        this.container.appendChild(novoInput);
-    }
-
     criarLoader() {
         if (!document.getElementById("global-loader")) {
             this.loader = document.createElement("div");
@@ -146,6 +126,50 @@ class Denuncia {
         return valido;
     }
 
+     adicionarInput() {
+        if(!this.container) {
+            console.error("Elemento '#container' não encontrado."); 
+            return;
+
+        }
+        const novoInput = document.createElement("input");
+        novoInput.type = "file";
+        novoInput.id = "file";
+        novoInput.name = "file[]";
+        novoInput.className = "file-input obrigatorio";
+
+        const anexosAtuais = this.container.querySelectorAll('input[type="file"].file-input').length;
+        if (anexosAtuais >= 4) {
+            alert("Só pode adicionar até 5 anexos.");
+            return;
+        }
+        this.container.appendChild(novoInput);
+    }
+
+    removerInput() {
+        if (!this.container) {
+            console.error("Elemento '#container' não encontrado."); 
+            return;
+        }
+
+        const inputs = this.container.querySelectorAll('input[type="file"].file-input');
+        if (inputs.length <= 0) {
+            alert("Deve adicionar pelo menos um anexo");
+            return;
+        }
+
+        const ultimoInput = inputs[inputs.length - 1];
+
+        // Encontra o span.error que está imediatamente após o input
+        const erro = ultimoInput.nextElementSibling;
+        if (erro && erro.classList.contains("error")) {
+            erro.remove();
+        }
+
+        ultimoInput.remove();
+    }
+
+
     anonimato() {
         const sim = document.getElementById("sim");
         const ocultar = document.getElementById("dados-pessoais");
@@ -157,10 +181,10 @@ class Denuncia {
             } else {
                 ocultar.style.display = "block";
                 adicionarClass.forEach(el => el.className = "obrigatorio");
+
             }
         }
     }
 
 }
-
 const denuncia = new Denuncia();

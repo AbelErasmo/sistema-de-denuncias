@@ -120,9 +120,12 @@
             <input type="datetime-local" id="data" name="data" class="obrigatorio">
             <label for="data">Evidências:</label>
             <div id="container">
-                <input type="file" id="file[]" class="obrigatorio" name="file" accept="image/*,video/*" multiple >
+                <input type="file" id="file[]" class="obrigatorio" name="file" accept="image/*, video/*" multiple />
             </div>
-            <button type="button" class="mais" onclick="denuncia.adicionarInput()">➕</button><br>
+            <div class="butoes">
+                <button type="button" class="mais" onclick="denuncia.removerInput()">➖</button>
+                <button type="button" class="mais" onclick="denuncia.adicionarInput()">➕</button><br>
+            </div>
             <button type="submit" class="btn-denuncia">Submeter denúncia</button>
 
             <div id="submentido"></div>
