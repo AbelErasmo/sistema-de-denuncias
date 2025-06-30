@@ -54,8 +54,7 @@ Este sistema permite que cidadãos registrem denúncias de forma opcionalmente a
 ## ⚙️ Instruções Locais
 
 1. Clone o repositório:
-   ```bash
-2. git clone https://github.com/AbelErasmo/sistema-de-denuncias.git
+   ```bash git clone https://github.com/AbelErasmo/sistema-de-denuncias.git
 
 3.Execute o script config/db_connection.php para criar o banco de dados e as tabelas automaticamente.
 <ul>
