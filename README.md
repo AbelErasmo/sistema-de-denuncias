@@ -57,18 +57,18 @@ Este sistema permite que cidadãos registrem denúncias de forma opcionalmente a
    ```bash
    git clone https://github.com/AbelErasmo/sistema-de-denuncias.git
 
-3.Execute o script config/db_connection.php para criar o banco de dados e as tabelas automaticamente.
+2.Execute o script config/db_connection.php para criar o banco de dados e as tabelas automaticamente.
 <ul>
   <li>Acesse o formulário: http://localhost/sistema-de-denuncias/denuncia.html</li>
 </ul>
 
-4. Para login do admin:
-<ul>
-  <li>Crie manualmente um admin na tabela users com password_hash()</li>
-  <li>Acesse pages/login.php</li>
-</ul>
+3. Para login do admin:
+  <ul>
+    <li>Crie manualmente um admin na tabela users com password_hash()</li>
+    <li>Acesse pages/login.php</li>
+  </ul>
 
-🔐 Exemplo de Protocolo Gerado
+## 🔐 Exemplo de Protocolo Gerado
 DNC-20250701-5F3A9C
 
 ## 👨‍💻 Autor
