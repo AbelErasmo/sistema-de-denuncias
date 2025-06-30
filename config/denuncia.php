@@ -2,21 +2,21 @@
 
     // Criando uma base de dados e as tabelas se nao existirem
 
-    function create_database( $db ) { 
-       $sql = "CREATE DATABASE IF NOT EXISTS db_sistemaDenuncias;
-        USE db_sistemaDenuncias";
+    // function create_database( $db ) { 
+    //    $sql = "CREATE DATABASE IF NOT EXISTS db_sistemaDenuncias;
+    //     USE db_sistemaDenuncias";
       
-        $db->query( $sql );
+    //     $db->query( $sql );
         
 
-    }
+    // }
 
     function db_create_table() {
         $sql = "CREATE DATABASE IF NOT EXISTS db_sistemaDenuncias;
 
         USE db_sistemaDenuncias;
         
-        CREATE TABLE IF NOT EXISTS usuarios (
+        CREATE TABLE IF NOT EXISTS users (
             id INT(11) AUTO_INCREMENT PRIMARY KEY,
             nome VARCHAR(100) NOT NULL,
             senha VARCHAR(100) NOT NULL UNIQUE,

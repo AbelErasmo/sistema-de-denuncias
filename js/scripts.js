@@ -28,13 +28,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const form = document.getElementById("denuncia-form");
+    const formProtocolo = document.getElementById("historico-form");
+
     if (form) {
-        form.addEventListener("submit", function(e) {
+        form.addEventListener("submit", (e) => {
             if (!denuncia.validacao()) {
                 e.preventDefault();
             } else {
                 e.preventDefault();
                 form.reset();
+            }
+        });
+    }
+
+    if (formProtocolo) {
+         formProtocolo.addEventListener("submit", (e) => {
+            if (!denuncia.validacao()) {
+                e.preventDefault();
+            } else {
+                e.preventDefault();
+                formProtocolo.reset();
             }
         });
     }

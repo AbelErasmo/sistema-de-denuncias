@@ -53,7 +53,7 @@
             <button id="nova_denuncia" class="btn-denuncia mobile" onclick="denuncia.novaDenuncia()">Nova denúncia</button>
             <button id="historico_denuncia" class="btn-denuncia mobile" onclick="denuncia.historico()">Visualizar status</button>
         </div>
-        <form action="./uploads/upload.php" id="denuncia-form" method="POST" class="denuncia-form" style="display: block;">
+        <form action="./config/db_connection.php" id="denuncia-form" method="POST" class="denuncia-form" style="display: block;">
             <h3>Registar denúncia</h3>
             
             <div class="anonimo">              
@@ -120,7 +120,7 @@
             <input type="datetime-local" id="data" name="data" class="obrigatorio">
             <label for="data">Evidências:</label>
             <div id="container">
-                <input type="file" id="file[]" class="obrigatorio" name="file" accept="image/*, video/*" multiple />
+                <input type="file" id="file[]" class="obrigatorio" name="file" accept="image/*, video/*" />
             </div>
             <div class="butoes">
                 <button type="button" class="mais" onclick="denuncia.removerInput()">➖</button>
@@ -140,8 +140,8 @@
         <form id="historico-form" class="denuncia-form" style="display: none;">
             <h3>Visualizar Status da Denúncia</h3>
             <label for="protocolo">Insira o número de Protocolo:</label>
-            <input type="text" id="protocolo" name="protocolo">
-            <button type="submit" class="btn-denuncia" onclick="denuncia.mostrarHistorico()">Consultar status</button>
+            <input type="text"  class="obrigatorio" id="protocolo" name="protocolo">
+            <button type="submit" class="btn-denuncia">Consultar status</button>
         </form>
 
         <form class="historico" style="display: block;">
