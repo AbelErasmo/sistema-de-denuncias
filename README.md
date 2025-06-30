@@ -30,13 +30,13 @@ Este sistema permite que cidadãos registrem denúncias de forma opcionalmente a
 ---
 
 ## 📂 Estrutura
-📁 sistema-de-denuncias/ 
-  ├── config/ # Conexão com BD e criação de tabelas 
-  ├── css/ # Estilos customizados 
-  ├── js/ # Scripts de manipulação de inputs 
-  ├── uploads/evidencias/ # Pasta protegida para evidências 
-  ├── pages/ # Painel do admin e telas protegidas 
-  ├── denuncia.html # Formulário principal 
+📁 sistema-de-denuncias/ <br/>
+  ├── config/ # Conexão com BD e criação de tabelas <br/>
+  ├── css/ # Estilos customizados <br/>
+  ├── js/ # Scripts de manipulação de inputs <br/>
+  ├── uploads/evidencias/ # Pasta protegida para evidências <br/>
+  ├── pages/ # Painel do admin e telas protegidas <br/>
+  ├── denuncia.html # Formulário principal <br/>
   └── README.md
 
   
