@@ -57,7 +57,7 @@ Este sistema permite que cidadãos registrem denúncias de forma opcionalmente a
    ```bash
    git clone https://github.com/AbelErasmo/sistema-de-denuncias.git
 
-2.Execute o script config/db_connection.php para criar o banco de dados e as tabelas automaticamente.
+2. Execute o script config/db_connection.php para criar o banco de dados e as tabelas automaticamente.
 <ul>
   <li>Acesse o formulário: http://localhost/sistema-de-denuncias/denuncia.html</li>
 </ul>
