@@ -72,7 +72,9 @@ Este sistema permite que cidadãos registrem denúncias de forma opcionalmente a
 DNC-20250701-5F3A9C
 
 ## 👨‍💻 Autor
-Desenvolvido por Erasmo Abel Estudante de Ciência da Computação | Engajado em tecnologia com impacto social
+Desenvolvido por 
+Erasmo Abel 
+Estudante de Ciência da Computação | Engajado em tecnologia com impacto social
 
 ## 📌 Licença
 Este projeto é de código aberto. Contribuições são bem-vindas. Sinta-se livre para forkar, adaptar e implementar em causas que beneficiem a sociedade.
