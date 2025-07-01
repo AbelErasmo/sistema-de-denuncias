@@ -87,19 +87,36 @@
 
 .butoes {
   display: flex;
-  text-align: center;
+  justify-content: center;
+  gap: 1rem;
   margin-bottom: 1rem;
 }
 
 .butoes .mais {
   margin-top: 4px;
   color: white;
-  margin-left: 30rem;
-  transition: background-color 0.3s ease;
+  padding: 0.5rem 1rem;
+  border: 1px solid;
+  border-radius: 4px;
+  background-color: #cfcece;
+  transition: background-color 0.5s ease;
+  cursor: pointer;
+  justify-content: space-between;
 }
 
-.butoes .mais:first-child {
-  margin-left: 1rem;
+.butoes .mais:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 768px) {
+    .butoes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .butoes .mais {
+       width: 60%;
+    }
 }
 
 #global-loader {
