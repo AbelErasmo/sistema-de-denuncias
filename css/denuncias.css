@@ -169,3 +169,19 @@ span {
     display: block;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.status-pendente {
+    color: orange;
+    font-weight: bold;
+}
+
+.status-em_analise {
+    color: blue;
+    font-weight: bold;
+}
+
+.status-resolvida {
+    color: green;
+    font-weight: bold;
+}
+

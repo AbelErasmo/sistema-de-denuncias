@@ -130,14 +130,15 @@
             <div id="retorno-protocolo"></div>
         </form>
 
-        <form id="historico-form" class="denuncia-form" style="display: none;">
+        <form action="./admin/consultar_denuncia.php" method="GET" id="historico-form" class="denuncia-form" style="display: none;">
             <h3>Visualizar Status da Denúncia</h3>
             <label for="protocolo">Insira o número de Protocolo:</label>
-            <input type="text"  class="obrigatorio" id="protocolo" name="protocolo">
-            <button type="submit" class="btn-denuncia">Consultar status</button>
+            <input type="text" class="obrigatorio" id="protocolo" name="protocolo" placeholder="DNC-XXXXXXXX-XXXXXX">
+            <button type="submit" id="consultar-btn" class="btn-denuncia">Consultar status</button>
+            <span id="msg"></span>
         </form>
 
-        <form class="historico" style="display: none;">
+        <form class="historico" style="display: block;">
             <h3>Histórico do processo</h3>
             <table id="historico-table">
                 <thead>
@@ -150,17 +151,7 @@
                     </tr>
                 </thead>
                 <tbody id="historico-body">
-                    <!-- <tr>
-                        <td colspan="5" style="text-align: center;">Nenhuma denúncia registrada.</td>
-                    </tr> -->
-                    <tr>
-                        <td>Nenhuma denúncia registrada.</td>
-                        <td>Nenhuma denúncia registrada.</td>
-                        <td>Nenhuma denúncia registrada.</td>
-                        <td>Nenhuma denúncia registrada.</td>
-                        <td>Nenhuma denúncia registrada.</td>
-                    </tr>
-                    <!-- Os dados do histórico serão preenchidos dinamicamente com PHP -->
+                   <!-- Dados são adicionados dinamicamente via JS -->
                 </tbody>
             </table>
         </form>

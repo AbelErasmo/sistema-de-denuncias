@@ -88,6 +88,40 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+document.getElementById("consultar-btn").addEventListener('click', async() => {
+    const protocolo = document.getElementById("protocolo").value.trim();
+    const msg = document.getElementById("msg");
+
+    if (!/^DNC-\d{8}-[A-F0-9]{6}$/i.test(protocolo)) {
+        // msg.innerText = 'Insira um numero de protocolo válido';
+        // console.log("Insira um numero de protocolo válido")
+        return;
+    }
+
+    try {
+        const response = await fetch(`./admin/consultar_denuncia.php?protocolo=${encodeURIComponent(protocolo)}`);
+        const data = await response.json();
+
+        if (data.status === "success") {
+            denuncia.exibirDenunciaNaTabela(data.dados);
+        } else {
+            exibirMensagemVazia("Nenhuma denuncia encontrada com esse protocolo.");
+        }
+    } catch (err) {
+        exibirMensagemVazia("Erro ao consultar denúncia.");
+        console.error(err);
+    }
+
+    function exibirMensagemVazia(mensagem) {
+        const tbody = document.getElementById('historico-body');
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="5" style="text-align: center;">${mensagem}</td>
+            </tr>
+        `;
+    }
+});
+
 class Denuncia {
     constructor() {
         this.loader = null;
@@ -184,7 +218,7 @@ class Denuncia {
 
         const inputs = this.container.querySelectorAll('input[type="file"].file-input');
         if (inputs.length <= 0) {
-            alert("Você deve adicionar pelo menos um anexo.");
+            alert("Deve adicionar pelo menos um anexo.");
             return;
         }
 
@@ -209,6 +243,35 @@ class Denuncia {
             }
         }
     }
+
+    exibirDenunciaNaTabela(denuncia) {
+        const tbody = document.getElementById("historico-body");
+        // const mostrar_tabela = document.getElementById("historico-form");
+        // Remove o conteudo anterior
+        tbody.innerHTML = "";
+
+        const linha = document.createElement("tr");
+        linha.innerHTML = `
+            <td>${denuncia.protocolo}</td>
+            <td>${denuncia.tipo_denuncia}</td>
+            <td>${denuncia.descricao}</td>
+            <td>${denuncia.data_denuncia}</td>
+            <td><span class="status-${denuncia.status}">${denuncia.status}</span></td>
+        `;
+        // mostrar_tabela.style.display = "block";
+        tbody.appendChild(linha);
+    }
+
+    formatarData(data) {
+    const d = new Date(data);
+    return isNaN(d) ? data : d.toLocaleString("pt-BR", {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+}
 }
 
 const denuncia = new Denuncia();

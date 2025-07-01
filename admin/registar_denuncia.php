@@ -11,7 +11,9 @@
 
     if (!$conn) {
         http_response_code(500);
-        echo json_encode(['status' => 'error', 'message' => 'Conexão falhou.']);
+        echo json_encode([
+            'status' => 'error', 
+            'message' => 'Conexão falhou.']);
         exit;
     }
     
@@ -92,7 +94,10 @@
                 ]);
             }
         } else {
-            echo json_encode(["status" => "info", "message" => "Este endpoint aceita apenas POST."]);
+            echo json_encode([
+                "status" => "info", 
+                "message" => "Este endpoint aceita apenas POST."
+            ]);
         }
    } catch (Exception $e) {
         http_response_code(500);
@@ -105,13 +110,13 @@
     /** Função para gerar Token ou protocolo da denuncia 
      * Onde:
      * DNC = prefixo fixo para "Denúncia"
-     * 20250701 = data da denúncia (AAAA-MM-DD)
+     * 20250701 = data da denúncia (AAAAMMDD)
      * 5F3A9C = código aleatório hexadecimal
      * 
      */
     function gerarProtocolo() {
-            $data = date('Ymd');
-            $codigo = strtoupper(substr(bin2hex(random_bytes(3)), 0, 6));
-            return "DNC-$data-$codigo";
+        $data = date('Ymd');
+        $codigo = strtoupper(substr(bin2hex(random_bytes(3)), 0, 6));
+        return "DNC-$data-$codigo";
     }
 ?>
