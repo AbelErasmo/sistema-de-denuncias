@@ -1,0 +1,11 @@
+[01-Jul-2025 08:40:44 Europe/Berlin] PHP Warning:  Undefined array key "tipo_denuncia" in C:\xampp\htdocs\sistema-de-denuncias\admin\registar_denuncia.php on line 39
+[01-Jul-2025 08:40:44 Europe/Berlin] PHP Warning:  Undefined array key "local_ocorrencia" in C:\xampp\htdocs\sistema-de-denuncias\admin\registar_denuncia.php on line 42
+[01-Jul-2025 08:40:44 Europe/Berlin] PHP Warning:  Undefined array key "data_ocorrencia" in C:\xampp\htdocs\sistema-de-denuncias\admin\registar_denuncia.php on line 43
+[01-Jul-2025 08:48:25 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, string given in C:\xampp\htdocs\sistema-de-denuncias\admin\registar_denuncia.php:53
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\sistema-de-denuncias\admin\registar_denuncia.php on line 53
+[01-Jul-2025 08:58:55 Europe/Berlin] PHP Warning:  move_uploaded_file(C:\xampp\htdocs\sistema-de-denuncias\admin../uploads/evidencias/evd_6863872f1c2ff.jpg): Failed to open stream: No such file or directory in C:\xampp\htdocs\sistema-de-denuncias\admin\registar_denuncia.php on line 70
+[01-Jul-2025 08:58:55 Europe/Berlin] PHP Warning:  move_uploaded_file(): Unable to move &quot;C:\xampp\tmp\php2D2C.tmp&quot; to &quot;C:\xampp\htdocs\sistema-de-denuncias\admin../uploads/evidencias/evd_6863872f1c2ff.jpg&quot; in C:\xampp\htdocs\sistema-de-denuncias\admin\registar_denuncia.php on line 70
+[01-Jul-2025 09:40:29 Europe/Berlin] PHP Warning:  move_uploaded_file(C:\xampp\htdocs\sistema-de-denuncias\admin../uploads/evidencias/evd_686390edce9cf.png): Failed to open stream: No such file or directory in C:\xampp\htdocs\sistema-de-denuncias\admin\registar_denuncia.php on line 70
+[01-Jul-2025 09:40:29 Europe/Berlin] PHP Warning:  move_uploaded_file(): Unable to move &quot;C:\xampp\tmp\php3E7C.tmp&quot; to &quot;C:\xampp\htdocs\sistema-de-denuncias\admin../uploads/evidencias/evd_686390edce9cf.png&quot; in C:\xampp\htdocs\sistema-de-denuncias\admin\registar_denuncia.php on line 70

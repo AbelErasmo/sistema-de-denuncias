@@ -53,7 +53,7 @@
             <button id="nova_denuncia" class="btn-denuncia mobile" onclick="denuncia.novaDenuncia()">Nova denúncia</button>
             <button id="historico_denuncia" class="btn-denuncia mobile" onclick="denuncia.historico()">Visualizar status</button>
         </div>
-        <form action="./config/db_connection.php" id="denuncia-form" method="POST" class="denuncia-form" style="display: block;">
+        <form action="./admin/registar_denuncia.php" id="denuncia-form" method="POST" class="denuncia-form" style="display: none;">
             <h3>Registar denúncia</h3>
             
             <div class="anonimo">              
@@ -65,19 +65,18 @@
             </div>
 
             <div id="dados-pessoais" style="display: none;">
-                <label>Nome Completo:</label>
+                <label for="nome">Nome Completo:</label>
                 <input type="text" name="nome" class="validacao" id="nome" placeholder="Nome Completo">
-                <label>Email:</label>
-                <input type="email" class="validacao" name="email" id="email" placeholder="username@example.com">
-                <label>Celular:</label>
+                <label for="endereco">Email:</label>
+                <input type="email" class="validacao" name="endereco" id="endereco" placeholder="username@example.com">
+                <label for="telefone">Celular:</label>
                 <input type="tel" name="telefone" class="validacao" id="telefone" >
             </div>
 
             <label for="tipo">Tipo de Denúncia:</label>
-            <select id="tipo" name="tipo" class="obrigatorio">
+            <select id="tipo" name="tipo_denuncia" class="obrigatorio">
                 <option value="">Selecione o tipo da denúncia</option>
                 <option value="corrupcao">Corrupção</option>
-                <option value="abuso">Abuso Sexual</option>
                 <option value="sequestro">Sequestro</option>
                 <option value="violencia">Violência Doméstica</option>
                 <option value="trafico">Tráfico Humano</option>
@@ -96,7 +95,7 @@
             <select id="provincia" class="obrigatorio" name="provincia">
                 <option value="">Selecione uma Província</option>
                 <optgroup label="SUL">
-                    <option value="Maputo">Cidade de Maputo</option>
+                    <option value="Cidade de Maputo">Cidade de Maputo</option>
                     <option value="Maputo Provincia">Maputo Provincia</option>
                     <option value="Gaza">Gaza</option>
                     <option value="Inhambane">Inhambane</option>
@@ -115,12 +114,12 @@
             </select>
 
             <label for="local">Local da Ocorrência</label>
-            <input type="text" id="local" name="local" class="obrigatorio">
+            <input type="text" id="local" name="local_ocorrencia" class="obrigatorio"/>
             <label for="data">Data da Ocorrência:</label>
-            <input type="datetime-local" id="data" name="data" class="obrigatorio">
+            <input type="datetime-local" id="data" name="data_ocorrencia" class="obrigatorio"/>
             <label for="data">Evidências:</label>
             <div id="container">
-                <input type="file" id="file[]" class="obrigatorio" name="file" accept="image/*, video/*" />
+                <input type="file" id="file" class="obrigatorio" name="file[]" accept="image/*, video/*" />
             </div>
             <div class="butoes">
                 <button type="button" class="mais" onclick="denuncia.removerInput()">➖</button>
@@ -128,13 +127,7 @@
             </div>
             <button type="submit" class="btn-denuncia">Submeter denúncia</button>
 
-            <div id="submentido"></div>
-        </form>
-
-        <form id="protocolo-form" class="denuncia-form" style="display: none;">
-            <h3>O seu número de protocolo é: <span>722236789</span></h3>
-            <p>Por favor, guarde-o consigo num local seguro para acompanhar o status da tua denúncia.
-                Evite compartilhar de modo que a sua denúnica seja confidencial e anónima.</p>
+            <div id="retorno-protocolo"></div>
         </form>
 
         <form id="historico-form" class="denuncia-form" style="display: none;">
@@ -144,7 +137,7 @@
             <button type="submit" class="btn-denuncia">Consultar status</button>
         </form>
 
-        <form class="historico" style="display: block;">
+        <form class="historico" style="display: none;">
             <h3>Histórico do processo</h3>
             <table id="historico-table">
                 <thead>
@@ -152,7 +145,7 @@
                         <th>ID do Protocolo</th>
                         <th>Tipo de Denúncia</th>
                         <th>Descrição</th>
-                        <th>Data da Ocorrência</th>
+                        <th>Data do Registo</th>
                         <th>Status</th>
                     </tr>
                 </thead>
