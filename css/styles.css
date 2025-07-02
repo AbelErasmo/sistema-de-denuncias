@@ -7,7 +7,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #eee6e6;
+    background-color: #f1ebeb;
 }
 
 .info {
@@ -136,122 +136,175 @@ img {
     display: inline-block;
 }
 
-.conteudo {
-    width: 95%;
-    margin: 40px auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
+.container {
+  max-width: 1200px;
+  margin: auto;
+  background: #ffffff;
+  overflow: hidden;
 }
 
-.conteudo h2 {
-    color: #E64A19;
-    font-size: 22pt;
-    margin-bottom: 15px;
-    margin-top: 1rem;
+.header {
+  color: #f08017;;
+  padding: 50px 30px;
+  text-align: center;
 }
 
-.conteudo h2::after {
-    content: '';
-    display: block;
-    width: 10%;
-    height: 3px;
-    background-color: #f08017;
-    margin-top: 10px;
+.header h1 {
+  font-size: 2.8em;
+  margin-bottom: 10px;
 }
 
-.conteudo p {
-    font-size: 16px;
-    color: #333;
-    line-height: 1.8;
-    margin-bottom: 1rem;
+.subtitle {
+  font-size: 1.2em;
+  opacity: 0.9;
 }
 
-.conteudo .info-texto {
-   color: #f08017;
-   font-weight: 700;
-   font-style: italic;
-   margin-bottom: 2em;
+.content {
+  padding: 40px 30px;
 }
 
-.conteudo ul {
-    list-style: none;
-    padding-left: 0;
+.section {
+  margin-bottom: 40px;
 }
 
-.conteudo ul li {
-    position: relative;
-    padding-left: 32px;
-    margin-bottom: 12px;
+.section h2 {
+  font-size: 2em;
+  color: #f08017;
+  border-bottom: 2px solid #f08017;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
 }
 
-.conteudo ul li::before {
-    content: '';
-    position: absolute;
-    border-radius: 0;
-    box-shadow: none;
-    width: 18px;
-    height: 18px;
-    display: inline-block;
-    background: none;
+.legal-info {
+  text-align: center;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-left: 2px solid #f08017;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  line-height: 0.7cm;
+}
+
+.legal-info strong {
+  color: #f08017;
+}
+
+.intro-benefits,
+.intro-steps {
+  font-size: 1.1em;
+  color: #f08017;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.benefit-card {
+  background: #ffffff;
+  border: 1px solid #e1dfdd;
+  border-radius: 10px;
+  padding: 20px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.benefit-card:hover {
+  border-color: #f39c12;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.benefit-card h3 {
+  font-size: 1.1em;
+  color: #f08017;
+  margin-bottom: 10px;
+}
+
+.icon {
+  display: none; /* removido o conteúdo visual */
+}
+
+.highlight-box {
+  background-color: #f39c12;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+  margin: 40px 0;
+}
+
+.steps-container {
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 18px;
+  border-radius: 8px;
+  border: 1px solid #e1dfdd;
+  margin-bottom: 16px;
+  transition: border 0.3s;
+}
+
+.step:hover {
+  border-color: #f39c12;
+}
+
+.step-number {
+  background-color: #f08017;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  font-size: 1.2em;
+}
+
+.step-content h4 {
+  font-size: 1em;
+  color: #f08017;
+  margin-bottom: 5px;
+}
+
+.cta-wrapper {
+  text-align: center;
+}
+
+.cta-button {
+  width: 100%;
+    padding: 14px;
+    background-color: #f39c12;
+    color: #fff;
     border: none;
-    left: 0;
-    top: 2px;
-    mask-image: url('data:image/svg+xml;utf8,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 9.5L8 13.5L14 5.5" stroke="green" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>');
-    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 9.5L8 13.5L14 5.5" stroke="green" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>');
-    background-color: #f08017;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
-.conteudo ul li {
-    font-size: 14px;
-    color: #444;
-    margin-bottom: 10px;
+.cta-button:hover {
+  background-color: #f08017;
 }
 
-.conteudo ol li a {
-    color: #f08017;
-    text-decoration: none;
-}
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2em;
+  }
 
-.conteudo ol li a:hover {
-    color: #f08017;
-    text-decoration: underline;
-}
-
-.conteudo ol {
-    list-style: decimal inside;
-    padding-left: 0;
-    margin-left: 0;
-}
-
-.conteudo ol li {
-    position: relative;
-    font-size: 14px;
-    color: #444;
-    margin-bottom: 10px;
-    padding-left: 32px;
-}
-
-.conteudo ol li {
-    list-style: none;
-}
-
-.conteudo ol li::before {
-    content: counter(li) ".";
-    counter-increment: li;
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #f08017;
-    font-weight: bold;
-    font-size: 1em;
-    background: none;
-}
-
-.conteudo ol {
-    counter-reset: li;
+  .section h2 {
+    font-size: 1.5em;
+  }
 }
 
 .footer {
@@ -263,11 +316,7 @@ img {
 }
 
 /* Estilos definidos para mobile */
-
 @media (max-width: 768px) {
-    /* .btn-denuncia {
-        display: none;
-    } */
 
     .fechar-menu {
         display: none;
@@ -276,7 +325,6 @@ img {
     .menu-resposivo {
         display: block;
         cursor: pointer;
-        /* margin-right: 2em; */
         position: relative;
         z-index: 110;
     }
@@ -301,7 +349,6 @@ img {
     }
 
     .navbar {
-        /* position: relative; */
         display: flex;
         justify-content: space-between;
         top: 0;
@@ -354,7 +401,6 @@ img {
         backdrop-filter: blur(6px);
         -webkit-backdrop-filter: blur(6px);
         padding: 10px 20px;
-        /* border-radius: 10px; */
         display: inline-block;
     }
 

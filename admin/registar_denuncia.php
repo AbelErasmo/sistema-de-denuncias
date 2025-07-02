@@ -48,13 +48,12 @@
             if ($success) {
                 $id_denuncia = $conn->lastInsertId();
 
-                // Verifica se ao menos um arquivo foi enviado
                 if (!empty($_FILES['file']['name']) && is_array($_FILES['file']['name'])) {
                     $total = count($_FILES['file']['name']);
 
                     for ($i = 0; $i < $total; $i++) {
                         if ($_FILES['file']['error'][$i] !== 0) {
-                            continue; // pula arquivos com erro (ex: nenhum arquivo selecionado)
+                            continue; 
                         }
 
                         $tmp      = $_FILES['file']['tmp_name'][$i];
@@ -63,11 +62,9 @@
                         $tipo     = mime_content_type($tmp);
                         $tamanho  = $_FILES['file']['size'][$i];
 
-                        // Gera nome único
                         $nomeFinal = uniqid('evd_') . '.' . $ext;
                         $destino   = __DIR__ . '/../uploads/evidencias/' . $nomeFinal;
 
-                        // Validação de tipo e tamanho
                         $extensoes_permitidas = ['jpg', 'jpeg', 'png', 'mp4', 'pdf'];
                         $tamanhoMaxMB = 5 * 1024 * 1024;
 
@@ -76,8 +73,6 @@
                                 error_log("Falha ao mover arquivo para: $destino");
                                 continue;
                             }
-
-                            // Salva no banco a referência da evidência
                             $stmt = $conn->prepare("INSERT INTO evidencias(id_denuncia, caminho_arquivo, tipo_arquivo) VALUES (?, ?, ?)");
                             $stmt->execute([$id_denuncia, $nomeFinal, $tipo]);
                         }
@@ -107,7 +102,8 @@
         ]);
    }
 
-    /** Função para gerar Token ou protocolo da denuncia 
+    /** 
+     * Função para gerar Token ou protocolo da denuncia 
      * Onde:
      * DNC = prefixo fixo para "Denúncia"
      * 20250701 = data da denúncia (AAAAMMDD)

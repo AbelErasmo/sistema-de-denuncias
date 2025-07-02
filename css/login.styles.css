@@ -1,0 +1,136 @@
+.container-login {
+    width: 100%;
+    max-width: 400px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #f4f6f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border: 1px solid #d1dce2;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease;
+}
+
+.container-login:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.logotipo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.logotipo img {
+    width: 96px;
+    height: auto;
+}
+
+.container-login h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #2e2e2e;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.container-login p {
+    color: #666;
+    font-size: 0.95rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.container-login form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.input-group {
+    width: 100%;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-size: 0.85rem;
+}
+
+.container-login form input[type="text"],
+.container-login form input[type="password"] {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    background-color: #fff;
+    transition: border-color 0.2s ease;
+}
+
+.container-login form input:focus {
+    border-color: #f39c12;
+    outline: none;
+}
+
+.container-login form input::placeholder {
+    color: #aaa;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: #f39c12;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #e67e22;
+}
+
+button:active {
+    background-color: #d35400;
+}
+
+button:focus {
+    outline: 2px solid #e67e22;
+    outline-offset: 2px;
+}
+
+.rodape {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.rodape .name {
+    color: #e67e22;
+    font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .container-login {
+        padding: 1.5rem;
+        width: 90%;
+        margin-top: 2rem;
+    }
+
+    .container-login h1 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 0.85rem;
+    }
+}

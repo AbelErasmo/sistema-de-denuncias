@@ -8,16 +8,27 @@ try {
     $conn = new PDO("mysql:host=$servername", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Cria a base de dados
+    // Criação da base de dados
     $conn->exec("CREATE DATABASE IF NOT EXISTS db_sistemaDenuncias CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
     $conn->exec("USE db_sistemaDenuncias");
 
     // Cria a tabela de usuários
     $sql = "CREATE TABLE IF NOT EXISTS users (
                 id INT AUTO_INCREMENT PRIMARY KEY,
+                id_reparticao INT NOT NULL,
                 nome VARCHAR(100) NOT NULL,
                 email VARCHAR(255) NOT NULL UNIQUE,
                 senha VARCHAR(255) NOT NULL,
+                data_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                FOREIGN KEY (id_reparticao) REFERENCES reparticao(id) ON DELETE CASCADE
+            );";
+    $conn->exec($sql);
+
+    // Cria a tabela repartição para o tratamento discentralizado das denúncias de acordo com o tipo
+    $sql = "CREATE TABLE IF NOT EXISTS reparticao (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                nome_reparticao VARCHAR(100) NOT NULL,
+                provincia VARCHAR(255) NOT NULL,
                 data_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             );";
     $conn->exec($sql);
