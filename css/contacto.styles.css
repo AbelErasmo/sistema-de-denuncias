@@ -1,7 +1,6 @@
 :root {
-    --primary-color: #E64A19;
+    --primary-color: #f58230;
     --secondary-color: #1cc88a;
-    --accent-color: #0e70da;
     --background-light: #ffffff;
     --text-color: #333;
     --input-border: #ccc;
@@ -33,7 +32,7 @@
     color: white;
   }
 
-  .container {
+  .container-contacto {
     max-width: 800px;
     margin: 2rem auto;
     padding: 0 1rem;
@@ -57,7 +56,6 @@
     font-size: 1rem;
   }
 
-  /* Formulário de contato */
   form.contact-form {
     background: #f8f9fa;
     border: 1px solid var(--input-border);
@@ -118,13 +116,13 @@
     background-color: var(--primary-color);
   }
 
-    span {
+  span {
     color: red;
     font-size: 12pt;
     display: block;
     font-size: 13px;
     font-family: Arial, Helvetica, sans-serif;
-    }
+  }
 
   @media (max-width: 600px) {
     .contact-title {
