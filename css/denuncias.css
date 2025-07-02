@@ -144,6 +144,10 @@ h2::after {
        width: 60%;
     }
 
+    .historico {
+        display: none;
+    }
+
 }
 
 #global-loader {
