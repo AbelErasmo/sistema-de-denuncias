@@ -222,10 +222,6 @@ img {
   margin-bottom: 10px;
 }
 
-.icon {
-  display: none; /* removido o conteúdo visual */
-}
-
 .highlight-box {
   background-color: #f39c12;
   color: white;
@@ -233,7 +229,6 @@ img {
   text-align: center;
   font-size: 14pt;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  /* border-radius: 8px; */
   margin: 40px 0;
 }
 
@@ -278,12 +273,8 @@ img {
   margin-bottom: 5px;
 }
 
-.cta-wrapper {
-  text-align: center;
-}
-
-.cta-button {
-  width: 100%;
+.btn-denuncia {
+    /* width: 100%; */
     padding: 14px;
     background-color: #f39c12;
     color: #fff;
@@ -295,18 +286,25 @@ img {
     transition: background-color 0.2s ease;
 }
 
-.cta-button:hover {
+.btn-mobile {
+  padding: 12px;
+  background-color: #f39c12;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+   margin-right: 3em;
+  transition: background-color 0.2s ease;
+} 
+
+.btn-mobile:hover {
   background-color: #f08017;
 }
 
-@media (max-width: 768px) {
-  .header h1 {
-    font-size: 2em;
-  }
-
-  .section h2 {
-    font-size: 1.5em;
-  }
+.btn-denuncia:hover {
+  background-color: #f08017;
 }
 
 .footer {
@@ -319,6 +317,18 @@ img {
 
 /* Estilos definidos para mobile */
 @media (max-width: 768px) {
+    .header h1 {
+      font-size: 2em;
+    }
+ 
+    .btn-denuncia {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .section h2 {
+      font-size: 1.5em;
+    }
 
     .fechar-menu {
         display: none;
@@ -404,6 +414,12 @@ img {
         -webkit-backdrop-filter: blur(6px);
         padding: 10px 20px;
         display: inline-block;
+    }
+
+    .step-number {
+      color: #f08017;
+      background: none;
+      font-size: 1em;
     }
 
     .conteudo {
